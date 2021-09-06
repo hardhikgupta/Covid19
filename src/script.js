@@ -1,8 +1,9 @@
 const newCases = document.getElementById('newCases');
 const newDeaths = document.getElementById('newDeaths');
-const newCases = document.getElementById('newCases');
-const newCases = document.getElementById('newCases');
-const newCases = document.getElementById('newCases');
+const newRecovered = document.getElementById('newRecovered');
+const totalCases = document.getElementById('totalCases');
+const totalDeaths = document.getElementById('totalDeaths');
+
 
 
 
@@ -17,6 +18,10 @@ setInterval(() =>
 fetchDataJSON().then(fullData => {
   fullData;
   const data = fullData.Countries[76];
-  console.log(data);
   newCases.innerText=data.NewConfirmed;
+  newDeaths.innerText=data.NewDeaths;
+  newRecovered.innerText=data.NewRecovered;
+  totalCases.innerText=data.TotalConfirmed;
+  totalDeaths.innerText=data.TotalDeaths;
+  
 }), 2000);
