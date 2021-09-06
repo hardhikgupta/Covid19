@@ -1,11 +1,22 @@
+const newCases = document.getElementById('newCases');
+const newDeaths = document.getElementById('newDeaths');
+const newCases = document.getElementById('newCases');
+const newCases = document.getElementById('newCases');
+const newCases = document.getElementById('newCases');
 
-async function fetchMoviesJSON() {
+
+
+
+async function fetchDataJSON() {
   const response = await fetch('https://api.covid19api.com/summary');
-  const movies = await response.json();
-  return movies;
+  const fullData = await response.json();
+  return fullData;
 }
 
-fetchMoviesJSON().then(movies => {
-  movies; // fetched movies
-  console.log(movies.Countries[76]);
-});
+setInterval(() =>
+fetchDataJSON().then(fullData => {
+  fullData;
+  const data = fullData.Countries[76];
+  console.log(data);
+  newCases.innerText=data.NewConfirmed;
+}), 2000);
