@@ -10,3 +10,9 @@
 .span{
   float: right
 }
+
+#footer{
+  height: 100px;
+  padding: 50px;
+  text-align: center
+}
